@@ -1,0 +1,50 @@
+# Laravel environment files
+.env
+.env.backup
+
+# Cache and storage
+/storage/*
+/bootstrap/cache/*
+
+# Ignore storage keys
+/storage/*.key
+
+# Composer dependencies
+/vendor
+
+# Node modules and related files
+/node_modules
+/public/hot
+/public/storage
+
+# Build artifacts
+/public/build
+
+# Logs and cache
+/storage/logs
+/storage/framework/views
+.phpunit.result.cache
+
+# IDE and Editor files
+/.idea
+/.vscode
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PHPUnit configuration files
+/phpunit.xml
+/phpunit.xml.dist
+
+# Docker and Homestead
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+
+# NPM and Yarn logs
+npm-debug.log
+yarn-error.log
+
+# Additional Laravel-specific files
+/public/password-resets
