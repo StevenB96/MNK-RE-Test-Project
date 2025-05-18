@@ -7,7 +7,7 @@ use App\Models\Currency;
 
 class CurrencySeeder extends Seeder
 {
-    public function run(): void
+    public function run()
     {
         $currencies = [
             ['code' => 'USD', 'name' => 'US Dollar'],

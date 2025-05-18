@@ -13,6 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            VoyagerDatabaseSeeder::class,
+            VoyagerDummyDatabaseSeeder::class,
+            CurrencySeeder::class,
+            TransactionTypeSeeder::class,
+            AccountSeeder::class,
+            TransactionSeeder::class,
+        ]);
     }
 }
+// \App\Models\User::factory(10)->create();

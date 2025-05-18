@@ -7,11 +7,9 @@ use App\Models\TransactionType;
 
 class TransactionTypeSeeder extends Seeder
 {
-    public function run(): void
+    public function run()
     {
-        $types = ['Credit', 'Debit'];
-
-        foreach ($types as $type) {
+        foreach (['Credit', 'Debit'] as $type) {
             TransactionType::updateOrCreate(['name' => $type]);
         }
     }
