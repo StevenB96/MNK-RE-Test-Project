@@ -242,4 +242,10 @@ return [
            ],
        ]*/
     ],
+
+    'middleware' => [
+        'web',
+        'auth',
+        'can:browseVoyager',
+    ],
 ];
