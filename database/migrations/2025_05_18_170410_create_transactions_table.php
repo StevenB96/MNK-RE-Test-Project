@@ -17,8 +17,8 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->foreignId('account_id')->constrained()->cascadeOnDelete();
             $table->foreignId('transaction_type_id')->constrained('transaction_types');
-            $table->decimal('amount', 15, 2);
             $table->foreignId('currency_id')->constrained('currencies');
+            $table->decimal('amount', 15, 2);
             $table->text('description')->nullable();
             $table->timestamps();
         });
