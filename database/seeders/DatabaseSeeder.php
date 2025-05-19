@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
             TransactionTypeSeeder::class,
             AccountSeeder::class,
             TransactionSeeder::class,
+            TrimDefaultMenuItems::class,
+            // CreateAccountsDataTypeAndPermissions::class,
+            AddMenuItemsAndBreadPermissionsSeeder::class,
+            DataTypesAndRowsSeeder::class,
         ]);
     }
 }
