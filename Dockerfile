@@ -49,8 +49,8 @@ RUN npm ci
 COPY . .
 RUN npm run production
 
-# --- Stage 3: Final production image ---
-FROM base AS production
+# --- Stage 3: Final PHP production image ---
+FROM base AS php-fpm-prod
 
 WORKDIR /var/www/html
 
@@ -58,7 +58,7 @@ WORKDIR /var/www/html
 COPY --from=php-builder /app /var/www/html
 
 # Copy built assets
-COPY --from=node-builder /app/public/js  public/js
+COPY --from=node-builder /app/public/js public/js
 COPY --from=node-builder /app/public/css public/css
 
 # Fix permissions on Laravel storage & cache
@@ -67,3 +67,18 @@ RUN chown -R www-data:www-data storage bootstrap/cache \
 
 EXPOSE 9000
 CMD ["php-fpm"]
+
+# --- Stage 4: Nginx image ---
+FROM nginx:alpine AS production
+
+# Copy Nginx config (you need to create this file next to Dockerfile)
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# Copy app from php-fpm-prod stage
+COPY --from=php-fpm-prod /var/www/html /var/www/html
+
+# Set permissions
+RUN chown -R nginx:nginx /var/www/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
