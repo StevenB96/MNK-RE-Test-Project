@@ -1,0 +1,33 @@
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules
+vendor
+
+# Logs & Temp
+npm-debug.log
+tests/
+coverage/
+
+# Laravel Storage (keep dirs, ignore contents)
+!storage/
+!storage/logs/
+!storage/framework/
+!storage/framework/cache/
+!storage/framework/sessions/
+!storage/framework/views/
+storage/*.key
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
