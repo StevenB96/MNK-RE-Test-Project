@@ -24,9 +24,9 @@ services:
       context: .
     ports:
       - "80:80"              # Expose Nginx on host port 80
-    volumes:
-      - .:/var/www/html      # Share app code with nginx container
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro  # Your nginx config
+    # volumes:
+    #   - .:/var/www/html      # Share app code with nginx container
+    #   - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro  # Your nginx config
     depends_on:
       - app
 
