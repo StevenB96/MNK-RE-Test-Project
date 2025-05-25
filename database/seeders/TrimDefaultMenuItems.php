@@ -16,8 +16,8 @@ class TrimDefaultMenuItems extends Seeder
     {
         // List of menu item titles to keep
         $titlesToKeep = [
-            'Users',
-            'Roles',
+            // 'Users',
+            // 'Roles',
         ];
 
         // Backup items to be deleted
