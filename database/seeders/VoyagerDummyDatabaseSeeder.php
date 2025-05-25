@@ -18,7 +18,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             PostsTableSeeder::class,
             PagesTableSeeder::class,
-            TranslationsTableSeeder::class,
+            // TranslationsTableSeeder::class,
             PermissionRoleTableSeeder::class,
         ]);
     }
